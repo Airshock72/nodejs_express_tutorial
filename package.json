@@ -1,0 +1,29 @@
+{
+  "name": "nodejs_express_tutorial",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/Airshock72/nodejs_express_tutorial#readme",
+  "bugs": {
+    "url": "https://github.com/Airshock72/nodejs_express_tutorial/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Airshock72/nodejs_express_tutorial.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "1-intro.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.8",
+    "lodash": "^4.17.23"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  }
+}
