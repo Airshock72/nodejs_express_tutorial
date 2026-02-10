@@ -1,13 +1,13 @@
-const { readFile } = require('fs')
+const { readFile, writeFile } = require('fs').promises
 
-const getText = (path) => {
-    return new Promise((resolve, reject) => {
-        readFile(path, 'utf-8', (err, result) => {
-            if (err) reject(err)
-            else resolve(result)
-        })
-    })
-}
+// const getText = (path) => {
+//     return new Promise((resolve, reject) => {
+//         readFile(path, 'utf-8', (err, result) => {
+//             if (err) reject(err)
+//             else resolve(result)
+//         })
+//     })
+// }
 
 // getText('./content/first.txt')
 //     .then((result) => console.log(result))
@@ -15,8 +15,14 @@ const getText = (path) => {
 
 const start = async () => {
     try {
-        const first = await getText('./content/first.txt')
-        const second = await getText('./content/second.txt')
+        const first = await readFile('./content/first.txt', 'utf-8')
+        const second = await readFile('./content/second.txt', 'utf-8')
+
+        await writeFile(
+            './content/result-ming-grenade.txt',
+            `This is the result: ${first}, ${second}`,
+            { flag: 'a'}
+        )
         console.log(first)
         console.log(second)
     } catch (err) {
